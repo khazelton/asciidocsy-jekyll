@@ -1,0 +1,163 @@
+<resource xmlns="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:icfs="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/resource-schema-3" xmlns:org="http://midpoint.evolveum.com/xml/ns/public/common/org-3" xmlns:q="http://prism.evolveum.com/xml/ns/public/query-3" xmlns:ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3" xmlns:t="http://prism.evolveum.com/xml/ns/public/types-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" oid="d92aa25c-f695-4238-9930-ea60a9d9157b" version="2" >
+    <name>hr</name>
+    <metadata>
+        <requestTimestamp>2023-05-25T19:21:36.226-05:00</requestTimestamp>
+        <requestorRef oid="00000000-0000-0000-0000-000000000002" relation="org:default" type="c:UserType"/>
+        <createTimestamp>2023-05-25T19:21:36.273-05:00</createTimestamp>
+        <creatorRef oid="00000000-0000-0000-0000-000000000002" relation="org:default" type="c:UserType"/>
+        <createChannel>http://midpoint.evolveum.com/xml/ns/public/common/channels-3#user</createChannel>
+    </metadata>
+    <iteration>0</iteration>
+    <iterationToken/>
+    <operationalState>
+        <lastAvailabilityStatus>up</lastAvailabilityStatus>
+        <message>Status set to UP because resource schema was successfully fetched</message>
+        <timestamp>2023-05-25T19:21:36.366-05:00</timestamp>
+        <nodeId>DefaultNode</nodeId>
+    </operationalState>
+    <operationalStateHistory id="3">
+        <lastAvailabilityStatus>up</lastAvailabilityStatus>
+        <message>Status set to UP because resource schema was successfully fetched</message>
+        <timestamp>2023-05-25T19:21:36.366-05:00</timestamp>
+        <nodeId>DefaultNode</nodeId>
+    </operationalStateHistory>
+    <connectorRef oid="7738fcb3-fd81-4f56-9b80-b10b6d5ab5c6" relation="org:default" type="c:ConnectorType"/>
+    <connectorConfiguration xmlns:icfc="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/connector-schema-3">
+        <icfc:configurationProperties xmlns:gen349="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/bundle/com.evolveum.polygon.connector-csv/com.evolveum.polygon.connector.csv.CsvConnector">
+            <gen349:multivalueDelimiter>;</gen349:multivalueDelimiter>
+            <gen349:fieldDelimiter>,</gen349:fieldDelimiter>
+            <gen349:filePath>/home/kh/opt/non.adoc/source-hr.csv</gen349:filePath>
+            <gen349:nameAttribute>uid</gen349:nameAttribute>
+            <gen349:uniqueAttribute>uid</gen349:uniqueAttribute>
+        </icfc:configurationProperties>
+    </connectorConfiguration>
+    <schema>
+        <cachingMetadata>
+            <retrievalTimestamp>2023-05-25T19:21:36.366-05:00</retrievalTimestamp>
+            <serialNumber>77080d58c618e3c6-db2dac17980339a3</serialNumber>
+        </cachingMetadata>
+        <generationConstraints>
+            <generateObjectClass>ri:AccountObjectClass</generateObjectClass>
+        </generationConstraints>
+        <definition>
+            <xsd:schema xmlns:a="http://prism.evolveum.com/xml/ns/public/annotation-3" xmlns:ra="http://midpoint.evolveum.com/xml/ns/public/resource/annotation-3" xmlns:tns="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3" xml:space="preserve">
+                <xsd:import namespace="http://prism.evolveum.com/xml/ns/public/annotation-3"/>
+                <xsd:import namespace="http://midpoint.evolveum.com/xml/ns/public/resource/annotation-3"/>
+                <xsd:complexType name="AccountObjectClass">
+                    <xsd:annotation>
+                        <xsd:appinfo>
+                            <a:container/>
+                            <ra:resourceObject/>
+                            <ra:identifier>ri:uid</ra:identifier>
+                            <ra:displayNameAttribute>ri:uid</ra:displayNameAttribute>
+                            <ra:namingAttribute>ri:uid</ra:namingAttribute>
+                            <ra:nativeObjectClass>__ACCOUNT__</ra:nativeObjectClass>
+                            <ra:default>true</ra:default>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" name="validFrom" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayName>validFrom</a:displayName>
+                                    <a:displayOrder>120</a:displayOrder>
+                                    <ra:nativeAttributeName>validFrom</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>validFrom</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" name="validTo" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayName>validTo</a:displayName>
+                                    <a:displayOrder>130</a:displayOrder>
+                                    <ra:nativeAttributeName>validTo</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>validTo</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" name="mail" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayName>mail</a:displayName>
+                                    <a:displayOrder>140</a:displayOrder>
+                                    <ra:nativeAttributeName>mail</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>mail</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" name="lastname" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayName>lastname</a:displayName>
+                                    <a:displayOrder>150</a:displayOrder>
+                                    <ra:nativeAttributeName>lastname</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>lastname</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" name="firstname" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayName>firstname</a:displayName>
+                                    <a:displayOrder>160</a:displayOrder>
+                                    <ra:nativeAttributeName>firstname</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>firstname</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" name="department" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayName>department</a:displayName>
+                                    <a:displayOrder>170</a:displayOrder>
+                                    <ra:nativeAttributeName>department</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>department</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="uid" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayName>uid</a:displayName>
+                                    <a:displayOrder>100</a:displayOrder>
+                                    <ra:nativeAttributeName>uid</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>__NAME__</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:schema>
+        </definition>
+    </schema>
+    <capabilities>
+        <cachingMetadata>
+            <retrievalTimestamp>2023-05-25T19:21:36.359-05:00</retrievalTimestamp>
+            <serialNumber>4936e15d3c5b77a4-9bb075f7e5b1274d</serialNumber>
+        </cachingMetadata>
+        <native xmlns:cap="http://midpoint.evolveum.com/xml/ns/public/resource/capabilities-3">
+            <cap:schema/>
+            <cap:discoverConfiguration/>
+            <cap:liveSync/>
+            <cap:create/>
+            <cap:read>
+                <cap:returnDefaultAttributesOption>false</cap:returnDefaultAttributesOption>
+            </cap:read>
+            <cap:update>
+                <cap:addRemoveAttributeValues>true</cap:addRemoveAttributeValues>
+            </cap:update>
+            <cap:delete/>
+            <cap:testConnection/>
+            <cap:script>
+                <cap:host id="1">
+                    <cap:type>resource</cap:type>
+                </cap:host>
+                <cap:host id="2">
+                    <cap:type>connector</cap:type>
+                </cap:host>
+            </cap:script>
+        </native>
+    </capabilities>
+</resource>
