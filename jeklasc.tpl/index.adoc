@@ -1,0 +1,65 @@
+= Jekyll / Asciidoc / Github Pages
+:showtitle:
+:page-title: Initial Draft of a Documentation System and Workflow
+:page-description: Diverging from the asciidocter repo, jekyll-asciidoc-wuickstart
+
+++++
+<r-c>
+    // header
+    <c1-1 lg1>
+        Any commit to this repo will trigger the auto-republication workflow. If everything is in order then changes to the AsciiDoc content will be automatically published to your `gh_pages` branch and hosted via Jekyll and Github.
+    </c1-1>
+
+    <c1-1 lg1-2>
+        // main content
+++++
+
+== What do I do now?
+
+
+=== Edit content
+
+Editing content is very simple. The easiest way to update your blog is to clone your repository, fire up your favorite text editor and run the content locally. To do this run the `jekyll serve` command and open a web browser to http://localhost:4000. Jekyll will automatically process and host changes to the content. Also make sure that your `Gemfile` is up-to-date with the current version of your gem sources, e.g. with `gem list --local | grep "jekyll"`.
+
+You may also edit your content directly on Github. To do this, navigate the browser the file you wish to edit, click the pensil (edit) button in the upper right hand corner of the view and make your changes. When you're finished, commit your changes. This will trigger Travis to generate and publish a new website including your changes.
+
+For blog posts, Jekyll will recognize files under the `_post` directory, parse the name and place it in the list of posts. These will show up under the `site.posts` variable.
+
+To display a list of posts, use Jekyll syntax similar to the following:
+
+[source, html]
+----
+{% for post in site.posts limit: 5 %}
+<a href=".{{ post.url }}">{{ post.navtitle }}</a>
+{% endfor %}
+----
+
+=== Update Look and feel
+
+The layout provided is based on http://foundation.zurb.com[Foundation], a responsive design css framework. You're free to update the layout by editing the `_layouts/default.html` file and css under the `css` directory.
+
+//This blog layout is based on the http://foundation.zurb.com/templates-previews-sites-f6/blog.html[Blog template].
+
+=== Reference documentation
+
+The following links will help with detailed explanations on Jekyll and AsciiDoc.
+
+* http://jekyllrb.com[Jekyll]
+* http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Quick Reference]
+* http://asciidoctor.org[Asciidoctor]
+
+++++
+    </c1-1>
+
+    <c1-1 sm1-2 lg1-4 lg2>
+        Left Sidebar
+    </c1-1>
+    <c1-1 sm1-2 lg1-4>
+        Right Sidebar
+    </c1-1>
+    <c1-1>
+        [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+        This work is licensed under a https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt[Creative Commons Attribution 4.0 International License]
+    </c1-1>
+</r-c>
+++++
